@@ -29,8 +29,8 @@ def _get_variance(self, timestep, prev_timestep):
     are placed on the same device to avoid device mismatch in gather.
     Handles both scalar and batched timesteps.
 
-    This is near identical to the implementation in TRL; however, a custom implemenation
-    was needed as alpha_cumprods and final_alpha_cumprod were often moved
+    This is near identical to the implementation in TRL; however, a custom implementation
+    was needed as `alpha_cumprods` and `final_alpha_cumprod` were often moved
     .to(device) by accelerate, when they are expected to remain on CPU.
     """
     # Ensure we have tensors

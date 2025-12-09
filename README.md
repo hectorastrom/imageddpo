@@ -5,7 +5,21 @@ All credit goes to the [DDPO Implementation from HuggingFace
 TRL](https://huggingface.co/docs/trl/main/en/ddpo_trainer) (now deprecated) and
 the [DDPO paper](https://arxiv.org/abs/2305.13301).
 
-I also found [Dr. Tanishq Abraham's blog](https://www.tanishq.ai/blog/posts/ddpo.html) to be incredibly helpful.
+I also found [Dr. Tanishq Abraham's
+blog](https://www.tanishq.ai/blog/posts/ddpo.html) to be incredibly helpful.
+
+# Example Usage
+
+For a complete example, please refer to the [gaussian
+glasses](https://github.com/hectorastrom/gaussian-glasses) repo and [website](https://hectorastrom.github.io/gaussian-glasses/).
+
+There, you will see:
+1. How a distributed training loop is set up in `rl/rl_trainer.py`
+2. How a reward function can be defined in `rl/reward.py`
+3. How ImageDDPOTrainer can be used for image decorruption or revealing
+   camouflaged animals.
+
+---
 
 ## Birds-Eye Mechanics of Trainer (DDPO and ImageDDPO)
 1. **Initialize trainer** with pipeline, scheduler, reward, config.
