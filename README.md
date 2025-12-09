@@ -8,6 +8,22 @@ the [DDPO paper](https://arxiv.org/abs/2305.13301).
 I also found [Dr. Tanishq Abraham's
 blog](https://www.tanishq.ai/blog/posts/ddpo.html) to be incredibly helpful.
 
+# Installation
+
+## Install from source
+
+```bash
+git clone https://github.com/hectorastrom/imageddpo.git
+cd imageddpo
+pip install -e .
+```
+
+## Install as a package (after publishing to PyPI)
+
+```bash
+pip install imageddpo
+```
+
 # Example Usage
 
 For a complete example, please refer to the [gaussian

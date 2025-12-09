@@ -1,9 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "imageddpo"
 version = "0.1.0"
-description = "Add your description here"
+description = "The equivalent of SDImg2ImgPipeline for DDPO: modifying DDPOTrainer to support image inputs in addition to text prompts"
 readme = "README.md"
 requires-python = ">=3.11"
+authors = [
+    {name = "Hector Astrom", email = "hastrom@mit.edu"}
+]
 dependencies = [
     "accelerate>=1.12.0",
     "datasets>=4.4.1",
@@ -14,3 +21,9 @@ dependencies = [
     "trl==0.21.0",
     "wandb>=0.23.1",
 ]
+
+[tool.setuptools]
+packages = ["imageddpo"]
+
+[tool.setuptools.package-data]
+imageddpo = []
