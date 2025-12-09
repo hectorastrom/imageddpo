@@ -24,6 +24,48 @@ pip install -e .
 pip install imageddpo
 ```
 
+# Basic Usage
+
+## Importing Modules
+
+```python
+from imageddpo import ImageDDPOTrainer, I2IDDPOStableDiffusionPipeline
+from trl import DDPOConfig
+```
+
+## Configuration
+
+Configure the trainer using `DDPOConfig` from the TRL library:
+
+```python
+config = DDPOConfig(
+    sample_num_steps=50,
+    sample_guidance_scale=7.5,
+    sample_eta=1.0,
+    train_batch_size=4,
+    train_use_8bit_adam=True,
+    # ... other DDPOConfig parameters
+)
+
+# Initialize the pipeline
+pipeline = I2IDDPOStableDiffusionPipeline.from_pretrained(
+    "runwayml/stable-diffusion-v1-5",
+    # ... pipeline initialization parameters
+)
+
+# Initialize the trainer
+trainer = ImageDDPOTrainer(
+    config=config,
+    model=pipeline.unet,
+    ref_model=None,
+    accelerator=None,
+    prompt_fn=your_prompt_function,
+    reward_fn=your_reward_function,
+    noise_strength=0.2,  # ImageDDPO specific parameter
+    # ... other trainer parameters
+)
+```
+
 # Example Usage
 
 For a complete example, please refer to the [gaussian
@@ -74,13 +116,6 @@ There, you will see:
    - Namely, `r=4, lora_alpha=4, init_lora_weights="gaussian",
       target_modules=["to_k", "to_q", "to_v", "to_out.0"]`
 
-## Todo
-[x] Confirm each fundamental implementation change is implemented
-[x] Check files for redundancy or error-prone rewriting (e.g. rewriting
-denoising instead of using an Img2Img pipeline)
-[x] Remove unclear or ambiguous sections - possible relics from stiching things
-together
-[ ] Point to example usage and blog in diffusion-lens repo
 
 ---
 
