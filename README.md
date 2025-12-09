@@ -18,7 +18,7 @@ cd imageddpo
 pip install -e .
 ```
 
-## Install as a package (after publishing to PyPI)
+## Install as a package
 
 ```bash
 pip install imageddpo

@@ -11,6 +11,19 @@ requires-python = ">=3.11"
 authors = [
     {name = "Hector Astrom", email = "hastrom@mit.edu"}
 ]
+license = {text = "MIT"}
+keywords = ["ddpo", "diffusion", "reinforcement-learning", "image-to-image", "stable-diffusion"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "accelerate>=1.12.0",
     "datasets>=4.4.1",
@@ -21,6 +34,11 @@ dependencies = [
     "trl==0.21.0",
     "wandb>=0.23.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/hectorastrom/imageddpo"
+Repository = "https://github.com/hectorastrom/imageddpo"
+Issues = "https://github.com/hectorastrom/imageddpo/issues"
 
 [tool.setuptools]
 packages = ["imageddpo"]
